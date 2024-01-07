@@ -18,8 +18,13 @@
     "postcss": "^8.4.32",
     "prettier": "^3.1.1",
     "tailwindcss": "^3.4.0",
+    "vite-plugin-vuetify": "^2.0.1",
     "vue": "^3.4.3",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "vuetify": "^3.4.9"
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.0.2",
+  "dependencies": {
+    "@mdi/font": "^7.4.47"
+  }
 }
