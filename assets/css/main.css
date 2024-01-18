@@ -1,13 +1,8 @@
 :root {
   font-family: "Courier", "Courier New", monospace;
+  overflow-y: auto;
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer base {
-  body {
-    @apply p-2;
-  }
-}
