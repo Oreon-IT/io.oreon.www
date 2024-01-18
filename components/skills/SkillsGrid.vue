@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-4 justify-items-center">
+  <div class="grid sm:grid-cols-2 sm:justify-items-center xl:grid-cols-4">
     <JavaScriptSkills />
     <CloudSkills />
     <JavaSkills />

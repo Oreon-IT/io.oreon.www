@@ -1,6 +1,6 @@
 <template>
   <div>
-    <IconWithText text="JavaScript" class="justify-center">
+    <IconWithText text="JavaScript" class="sm:justify-center">
       <template #icon>
         <JavaScriptIcon width="24" />
       </template>
