@@ -1,4 +1,5 @@
 import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
+import svgLoader from "vite-svg-loader";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -6,6 +7,12 @@ export default defineNuxtConfig({
   build: {
     transpile: ["vuetify"],
   },
+  components: [
+    {
+      path: "~/components",
+      pathPrefix: false,
+    },
+  ],
   modules: [
     (_options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) => {
@@ -18,7 +25,18 @@ export default defineNuxtConfig({
       template: {
         transformAssetUrls,
       },
+      script: {
+        propsDestructure: true,
+      },
     },
+    plugins: [
+      svgLoader({
+        svgoConfig: {
+          // Prevent multiple gradients with same ID being generated
+          plugins: ["prefixIds"],
+        },
+      }),
+    ],
   },
   css: [, "~/assets/css/main.css"],
   postcss: {

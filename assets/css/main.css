@@ -1,3 +1,7 @@
+:root {
+  font-family: "Courier", "Courier New", monospace;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
