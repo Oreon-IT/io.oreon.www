@@ -1,4 +1,11 @@
 <template>
+  <a
+    href="https://github.com/Oreon-IT/io.oreon.www"
+    target="_blank"
+    class="ml-auto pr-2 pt-2"
+  >
+    <GitHubIcon width="24" />
+  </a>
   <div class="h-100 grid place-content-center">
     <h1 class="mb-8 text-center text-6xl">
       Hello there, <v-icon color="yellow">mdi-hand-wave</v-icon>
@@ -14,3 +21,7 @@
     </main>
   </div>
 </template>
+
+<script setup>
+import GitHubIcon from "@/assets/icons/github.svg";
+</script>
