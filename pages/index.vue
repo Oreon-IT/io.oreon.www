@@ -6,7 +6,7 @@
     <main class="align-center flex flex-col gap-8">
       <p class="max-w-4xl text-xl">
         My name is Robin, I've been building web applications as a Software
-        Engineer for 10 years I have used various languages, frameworks,
+        Engineer for 10 years. I have used various languages, frameworks,
         tools,.. along the road, such as:
       </p>
 
