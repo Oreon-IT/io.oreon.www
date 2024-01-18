@@ -10,7 +10,7 @@
         tools,.. along the road, such as:
       </p>
 
-      <SkillsGrid />
+      <SkillsList />
     </main>
   </div>
 </template>
