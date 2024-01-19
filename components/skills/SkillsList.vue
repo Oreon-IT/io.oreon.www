@@ -1,5 +1,5 @@
 <template>
-  <div class="grid sm:grid-cols-2 md:grid-cols-4">
+  <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
     <ListItemWithIcon text="JavaScript" prominent>
       <JavaScriptIcon width="24" />
     </ListItemWithIcon>

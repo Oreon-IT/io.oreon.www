@@ -19,14 +19,9 @@
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.4.0",
-    "vite-plugin-vuetify": "^2.0.1",
     "vite-svg-loader": "^5.1.0",
     "vue": "^3.4.3",
-    "vue-router": "^4.2.5",
-    "vuetify": "^3.4.9"
+    "vue-router": "^4.2.5"
   },
-  "packageManager": "yarn@4.0.2",
-  "dependencies": {
-    "@mdi/font": "^7.4.47"
-  }
+  "packageManager": "yarn@4.0.2"
 }

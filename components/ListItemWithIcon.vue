@@ -1,15 +1,13 @@
 <template>
-  <VListItem class="gap-2">
-    <template #prepend>
-      <slot />
-    </template>
+  <li class="flex gap-2">
+    <slot />
     <strong v-if="prominent">
       {{ text }}
     </strong>
     <span v-else>
       {{ text }}
     </span>
-  </VListItem>
+  </li>
 </template>
 
 <script setup lang="ts">

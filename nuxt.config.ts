@@ -1,30 +1,26 @@
-import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 import svgLoader from "vite-svg-loader";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
-  build: {
-    transpile: ["vuetify"],
+  app: {
+    head: {
+      link: [
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0",
+        },
+      ],
+    },
   },
+  devtools: { enabled: true },
   components: [
     {
       path: "~/components",
       pathPrefix: false,
     },
   ],
-  modules: [
-    (_options, nuxt) => {
-      nuxt.hooks.hook("vite:extendConfig", (config) => {
-        config.plugins?.push(vuetify({ autoImport: true }));
-      });
-    },
-  ],
   vite: {
     vue: {
-      template: {
-        transformAssetUrls,
-      },
       script: {
         propsDestructure: true,
       },
