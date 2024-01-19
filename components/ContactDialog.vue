@@ -1,12 +1,10 @@
 <template>
   <dialog
-    class="w-11/12 flex-col gap-2 border-2 border-black p-4 backdrop-opacity-5 sm:w-[500px]"
+    class="w-11/12 flex-col gap-2 border-2 border-black p-4 backdrop-opacity-5 sm:w-[600px]"
     ref="dialogEl"
     :class="classes"
   >
-    <ContactForm />
-
-    <button type="button" @click="emit('onClose')">Close</button>
+    <ContactForm @close="dialogEl?.close()" />
   </dialog>
 </template>
 
@@ -33,11 +31,11 @@ watch(
 // Animating backdrop. This seems impossible with Tailwind // Inspired by
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 <style lang="scss" scoped>
-$transition-duration: 500ms;
+$transition-duration: 300ms;
 
 dialog[open] {
   opacity: 1;
-  transform: translateY(0%);
+  transform: translateY(0);
 }
 
 dialog {

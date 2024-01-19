@@ -11,7 +11,7 @@
       v-on="validationListeners"
       v-bind="attrs"
       :id="id"
-      class="border-2 border-black p-1"
+      class="border-2 border-black p-1 transition-colors"
       :class="inputClasses"
     />
     <input
@@ -20,7 +20,7 @@
       v-on="validationListeners"
       v-bind="attrs"
       :id="id"
-      class="border-2 border-black p-1"
+      class="border-2 border-black p-1 transition-colors"
       :class="inputClasses"
     />
     <div class="text-xs text-slate-500">

@@ -23,6 +23,11 @@
 
         <SkillsList />
 
+        <p class="max-4-xl text-xl">
+          I'm available for consultancy work on exciting projects that push my
+          boundaries.
+        </p>
+
         <ActionButton
           class="self-center text-xl"
           @click="handleClickContactButton"

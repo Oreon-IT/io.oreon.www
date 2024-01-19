@@ -1,5 +1,9 @@
 <template>
-  <form class="flex flex-col gap-2" @submit="handleSubmitEvent">
+  <form
+    class="flex flex-col gap-2"
+    @submit="handleSubmitEvent"
+    @reset="handleReset"
+  >
     <OutlinedInput
       id="email"
       type="email"
@@ -22,7 +26,10 @@
       rows="5"
     />
 
-    <ActionButton type="submit" class="self-start">Submit</ActionButton>
+    <div class="flex justify-end gap-2">
+      <RegularButton button-type="reset" type="danger">Cancel</RegularButton>
+      <RegularButton button-type="submit" type="primary">Submit</RegularButton>
+    </div>
   </form>
 </template>
 
@@ -31,17 +38,20 @@ import { useForm } from "vee-validate";
 import { toTypedSchema } from "@vee-validate/zod";
 import { z } from "zod";
 
-const { handleSubmit } = useForm({
+const emit = defineEmits<{ close: [void] }>();
+
+const { handleSubmit, resetForm } = useForm({
   validationSchema: toTypedSchema(
     z.object({
       email: z
-        .string()
-        .min(1, "I need to be able to contact you")
+        .string({
+          required_error: "I need to be able to contact you",
+        })
         .email("This email address is not in the correct format"),
       name: z.string().optional(),
-      message: z
-        .string()
-        .min(1, "Without a message, there is no point contacting me"),
+      message: z.string({
+        required_error: "Without a message, there is no point contacting me",
+      }),
     }),
   ),
 });
@@ -49,4 +59,9 @@ const { handleSubmit } = useForm({
 const handleSubmitEvent = handleSubmit((values) =>
   console.log("values are", values),
 );
+
+function handleReset() {
+  resetForm();
+  emit("close");
+}
 </script>
