@@ -14,7 +14,7 @@
           >waving_hand</span
         >
       </h1>
-      <main class="align-center flex flex-col gap-8">
+      <main class="flex flex-col gap-8">
         <p class="max-w-4xl text-xl">
           My name is Robin, I've been building web applications as a Software
           Engineer for 10 years. I have used various languages, frameworks,
@@ -22,6 +22,8 @@
         </p>
 
         <SkillsList />
+
+        <ActionButton class="self-center text-xl"> Contact me </ActionButton>
       </main>
     </div>
   </div>
