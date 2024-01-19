@@ -23,12 +23,30 @@
 
         <SkillsList />
 
-        <ActionButton class="self-center text-xl"> Contact me </ActionButton>
+        <ActionButton
+          class="self-center text-xl"
+          @click="handleClickContactButton"
+          type="button"
+        >
+          Contact me
+        </ActionButton>
       </main>
+
+      <ContactDialog :open="isContactDialogOpen" @on-close="handleClose" />
     </div>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import GitHubIcon from "@/assets/icons/github.svg";
+
+const isContactDialogOpen = ref(false);
+
+function handleClickContactButton() {
+  isContactDialogOpen.value = !isContactDialogOpen.value;
+}
+
+function handleClose() {
+  isContactDialogOpen.value = false;
+}
 </script>
