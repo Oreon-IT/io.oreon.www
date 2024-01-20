@@ -1,0 +1,10 @@
+- Add amount of years of XP
+- Add <title> to SVG icons
+- Ensure scrollbar only shows whe necessary
+- Use gradient background on "hello there?"
+- Check accessibility
+- Reset form when closing dialog
+- Style cancel button better
+- Allow closing dialog via X
+- Change favicon
+- Add logo
