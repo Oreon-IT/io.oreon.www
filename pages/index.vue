@@ -4,7 +4,7 @@
     <div class="grid grow place-content-center">
       <TheWelcome @click-contact-button="handleClickContactButton" />
 
-      <ContactDialog :open="isContactDialogOpen" @on-close="handleClose" />
+      <ContactDialog :open="isContactDialogOpen" @close="handleClose" />
     </div>
   </div>
 </template>

@@ -1,5 +1,7 @@
 <template>
-  <h1 class="mb-8 text-center text-6xl">
+  <h1
+    class="mb-8 bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-center text-6xl text-transparent"
+  >
     Hello there,
     <span class="material-symbols-outlined text-6xl text-yellow-300"
       >waving_hand</span

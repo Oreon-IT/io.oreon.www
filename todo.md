@@ -2,8 +2,6 @@
 - Use gradient background on "hello there?"
 - Check accessibility
 - Check mobile
-- Handle error response from contact email
-- Navigating to oreon.io results in 500, while navigating to www.oreon.io does work correctly
 - Add loading animation?
 - Don't allow function to be called from other origins
 - Prevent client spamming
