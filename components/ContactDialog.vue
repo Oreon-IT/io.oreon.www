@@ -10,8 +10,15 @@
     >
       close
     </button>
-    <ContactForm v-if="isFormAvailable" @close="emit('onClose')" />
-    <p class="transition-opacity duration-300" :class="thankYouDialogClasses">
+    <ContactForm
+      v-if="isFormAvailable"
+      @close="emit('onClose')"
+      @submit="handleSubmit"
+    />
+    <p
+      class="rounded bg-yellow-300 p-2 transition-opacity duration-300"
+      :class="thankYouDialogClasses"
+    >
       Thanks for reaching out! I'll be in touch soon.
     </p>
   </dialog>
@@ -24,8 +31,6 @@ const emit = defineEmits<{ onClose: [] }>();
 
 const dialogEl = ref<HTMLDialogElement | null>(null);
 const formSubmitted = ref(false);
-
-setTimeout(() => (formSubmitted.value = true), 2000);
 
 // Prevents overriding display: none on dialog when hidden
 const dialogClasses = computed(() => (open ? "flex" : undefined));
@@ -52,6 +57,10 @@ watch(
 
 function handleClickCloseButton() {
   emit("onClose");
+}
+
+function handleSubmit() {
+  formSubmitted.value = true;
 }
 </script>
 

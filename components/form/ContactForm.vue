@@ -38,7 +38,10 @@ import { useForm } from "vee-validate";
 import { toTypedSchema } from "@vee-validate/zod";
 import { z } from "zod";
 
-const emit = defineEmits<{ close: [void] }>();
+const emit = defineEmits<{
+  close: [void];
+  submit: [{ email: string; name?: string; message: string }];
+}>();
 
 const { handleSubmit, resetForm } = useForm({
   validationSchema: toTypedSchema(
@@ -56,9 +59,10 @@ const { handleSubmit, resetForm } = useForm({
   ),
 });
 
-const handleSubmitEvent = handleSubmit((values) =>
-  console.log("values are", values),
-);
+const handleSubmitEvent = handleSubmit((values) => {
+  resetForm();
+  emit("submit", values);
+});
 
 function handleReset() {
   resetForm();
