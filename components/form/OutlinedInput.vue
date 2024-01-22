@@ -1,7 +1,10 @@
 <template>
   <div class="flex flex-col" :class="containerClasses">
     <label :for="id" class="mb-1">{{ label }} </label>
-    <div v-if="errorMessage" class="mb-1 flex items-center gap-1 text-red-500">
+    <div
+      v-if="hasErrorMessage"
+      class="mb-1 flex items-center gap-1 text-red-500"
+    >
       <span class="material-symbols-outlined">error</span>
       <span class="text-sm">{{ errorMessage }}</span>
     </div>
@@ -52,9 +55,7 @@ const { value, errorMessage, handleChange, handleBlur, meta } =
     validateOnValueUpdate: false,
   });
 
-const hasErrorMessage = computed(
-  () => typeof errorMessage.value === "string" && errorMessage.value.length > 0,
-);
+const hasErrorMessage = computed(() => typeof errorMessage.value === "string");
 
 // From https://vee-validate.logaretm.com/v4/guide/composition-api/custom-inputs/#handling-events
 const validationListeners = {

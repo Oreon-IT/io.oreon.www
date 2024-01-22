@@ -13,14 +13,10 @@
     <ContactForm
       v-if="isFormAvailable"
       @close="$emit('close')"
+      :email-sent="emailSent"
+      :submitted="emailSent"
       @submit="handleSubmit"
     />
-    <p
-      class="rounded bg-yellow-300 p-2 transition-opacity duration-300"
-      :class="thankYouDialogClasses"
-    >
-      Thanks for reaching out! I'll be in touch soon.
-    </p>
   </dialog>
 </template>
 
@@ -30,13 +26,10 @@ defineEmits<{ close: [] }>();
 
 const isFormAvailable = ref(true);
 const dialogEl = ref<HTMLDialogElement | null>(null);
-const formSubmitted = ref(false);
+const emailSent = ref(false);
 
 // Prevents overriding display: none on dialog when hidden
 const dialogClasses = computed(() => (open ? "flex" : undefined));
-const thankYouDialogClasses = computed(() =>
-  formSubmitted.value ? "opacity-100" : "opacity-0",
-);
 
 watch(
   toRef(() => open),
@@ -58,7 +51,7 @@ watch(
 async function handleSubmit(contactDetails: ContactDetails) {
   try {
     await sendContactEmail(contactDetails);
-    formSubmitted.value = true;
+    emailSent.value = true;
   } catch (error) {
     console.error(error);
   }
