@@ -59,8 +59,13 @@ function handleClickCloseButton() {
   emit("onClose");
 }
 
-function handleSubmit() {
-  formSubmitted.value = true;
+async function handleSubmit(contactDetails: ContactDetails) {
+  try {
+    await sendContactEmail(contactDetails);
+    formSubmitted.value = true;
+  } catch (error) {
+    console.error(error);
+  }
 }
 </script>
 

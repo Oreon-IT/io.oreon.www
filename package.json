@@ -4,13 +4,16 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "nuxt:dev": "nuxt dev",
+    "dev": "netlify dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "prepare": "husky install"
   },
   "devDependencies": {
+    "@netlify/functions": "^2.5.1",
+    "@tsconfig/node18": "^18.2.2",
     "@vee-validate/zod": "^4.12.4",
     "autoprefixer": "^10.4.16",
     "husky": "^8.0.0",

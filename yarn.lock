@@ -713,6 +713,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@netlify/functions@npm:^2.5.1":
+  version: 2.5.1
+  resolution: "@netlify/functions@npm:2.5.1"
+  dependencies:
+    "@netlify/serverless-functions-api": "npm:1.13.0"
+    is-promise: "npm:^4.0.0"
+  checksum: 689097965590a9d030536ad3565670ea190d6fb464a2072cd1b4cc8727e9e7ed2e73df6fcb9d643e31187768d529793524a3d8c24d0804707bafc76ba45fca59
+  languageName: node
+  linkType: hard
+
 "@netlify/node-cookies@npm:^0.1.0":
   version: 0.1.0
   resolution: "@netlify/node-cookies@npm:0.1.0"
@@ -727,6 +737,16 @@ __metadata:
     "@netlify/node-cookies": "npm:^0.1.0"
     urlpattern-polyfill: "npm:8.0.2"
   checksum: 591966071faf68eb620621d30f7d7bf4c336fb57699368d0fd89c77dce87c7c67ea375c8f80901a301a09026be0e55b099c44259bc7a4695890216a2dc8ce82a
+  languageName: node
+  linkType: hard
+
+"@netlify/serverless-functions-api@npm:1.13.0":
+  version: 1.13.0
+  resolution: "@netlify/serverless-functions-api@npm:1.13.0"
+  dependencies:
+    "@netlify/node-cookies": "npm:^0.1.0"
+    urlpattern-polyfill: "npm:8.0.2"
+  checksum: 2a2c08d925eed05d59db8f645b5ce31aba7984769136df55bf2bc7e9fd5b8af4753f41a4e7bd672af5a75b130f923155f17d62c14f18917e3aa416f1685968f4
   languageName: node
   linkType: hard
 
@@ -1500,6 +1520,13 @@ __metadata:
   version: 0.2.0
   resolution: "@trysound/sax@npm:0.2.0"
   checksum: 44907308549ce775a41c38a815f747009ac45929a45d642b836aa6b0a536e4978d30b8d7d680bbd116e9dd73b7dbe2ef0d1369dcfc2d09e83ba381e485ecbe12
+  languageName: node
+  linkType: hard
+
+"@tsconfig/node18@npm:^18.2.2":
+  version: 18.2.2
+  resolution: "@tsconfig/node18@npm:18.2.2"
+  checksum: 71f2c65616125f3ec8c85704ea55100d2131e0c01cbf7a247e5f6f7d617dfaafd5ff4a09b4193bceface4b4f44e9aa909da8e9af3910c01a0661f202386e40af
   languageName: node
   linkType: hard
 
@@ -5132,6 +5159,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nuxt-app@workspace:."
   dependencies:
+    "@netlify/functions": "npm:^2.5.1"
+    "@tsconfig/node18": "npm:^18.2.2"
     "@vee-validate/zod": "npm:^4.12.4"
     autoprefixer: "npm:^10.4.16"
     husky: "npm:^8.0.0"

@@ -36,33 +36,19 @@
 <script lang="ts" setup>
 import { useForm } from "vee-validate";
 import { toTypedSchema } from "@vee-validate/zod";
-import { z } from "zod";
 
 const emit = defineEmits<{
   close: [void];
-  submit: [{ email: string; name?: string; message: string }];
+  submit: [ContactDetails];
 }>();
 
 const { handleSubmit, resetForm } = useForm({
-  validationSchema: toTypedSchema(
-    z.object({
-      email: z
-        .string({
-          required_error: "I need to be able to contact you",
-        })
-        .email("This email address is not in the correct format"),
-      name: z.string().optional(),
-      message: z.string({
-        required_error: "Without a message, there is no point contacting me",
-      }),
-    }),
-  ),
+  validationSchema: toTypedSchema(contactFormSchema),
 });
 
-const handleSubmitEvent = handleSubmit((values) => {
-  resetForm();
-  emit("submit", values);
-});
+const handleSubmitEvent = handleSubmit((contactDetails) =>
+  emit("submit", contactDetails),
+);
 
 function handleReset() {
   resetForm();
