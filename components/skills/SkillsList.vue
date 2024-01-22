@@ -6,7 +6,7 @@
     <ListItemWithIcon text="TypeScript" prominent>
       <TypeScriptIcon width="24" />
     </ListItemWithIcon>
-    <ListItemWithIcon text="Vue">
+    <ListItemWithIcon text="Vue" prominent>
       <VueIcon width="24" />
     </ListItemWithIcon>
     <ListItemWithIcon text="React">

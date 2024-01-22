@@ -7,3 +7,6 @@
   </header>
 </template>
 
+<script setup>
+import GitHubIcon from "@/assets/icons/github.svg";
+</script>

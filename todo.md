@@ -3,4 +3,3 @@
 - Add loading animation?
 - Don't allow function to be called from other origins
 - Prevent client spamming
-- Check if closing by pressing escape sets `open` to `false`
