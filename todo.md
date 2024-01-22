@@ -1,7 +1,6 @@
 - Add amount of years of XP
-- Use gradient background on "hello there?"
 - Check accessibility
-- Check mobile
 - Add loading animation?
 - Don't allow function to be called from other origins
 - Prevent client spamming
+- Check if closing by pressing escape sets `open` to `false`
