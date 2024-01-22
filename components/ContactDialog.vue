@@ -6,13 +6,13 @@
   >
     <button
       class="material-symbols-outlined absolute right-1 top-1"
-      @click="handleClickCloseButton"
+      @click="$emit('close')"
     >
       close
     </button>
     <ContactForm
       v-if="isFormAvailable"
-      @close="emit('onClose')"
+      @close="$emit('close')"
       @submit="handleSubmit"
     />
     <p
@@ -26,9 +26,9 @@
 
 <script lang="ts" setup>
 const { open } = defineProps<{ open: boolean }>();
-const isFormAvailable = ref(true);
-const emit = defineEmits<{ onClose: [] }>();
+defineEmits<{ close: [] }>();
 
+const isFormAvailable = ref(true);
 const dialogEl = ref<HTMLDialogElement | null>(null);
 const formSubmitted = ref(false);
 
@@ -54,10 +54,6 @@ watch(
     dialogEl.value?.close();
   },
 );
-
-function handleClickCloseButton() {
-  emit("onClose");
-}
 
 async function handleSubmit(contactDetails: ContactDetails) {
   try {
