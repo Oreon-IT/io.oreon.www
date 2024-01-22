@@ -3,6 +3,7 @@
     class="w-11/12 flex-col gap-2 border-2 border-black p-4 backdrop-opacity-5 sm:w-[600px]"
     ref="dialogEl"
     :class="dialogClasses"
+    @close="$emit('close')"
   >
     <button
       class="material-symbols-outlined absolute right-1 top-1"
@@ -23,7 +24,7 @@
 
 <script lang="ts" setup>
 const { open } = defineProps<{ open: boolean }>();
-defineEmits<{ close: [] }>();
+const emit = defineEmits<{ close: [] }>();
 
 const isFormAvailable = ref(true);
 const dialogEl = ref<HTMLDialogElement | null>(null);
