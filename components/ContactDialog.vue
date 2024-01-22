@@ -1,6 +1,6 @@
 <template>
   <dialog
-    class="relative w-11/12 flex-col gap-2 border-2 border-black p-4 backdrop-opacity-5 sm:w-[600px]"
+    class="w-11/12 flex-col gap-2 border-2 border-black p-4 backdrop-opacity-5 sm:w-[600px]"
     ref="dialogEl"
     :class="dialogClasses"
   >
@@ -10,7 +10,10 @@
     >
       close
     </button>
-    <ContactForm @close="dialogEl?.close()" />
+    <ContactForm @close="emit('onClose')" />
+    <p class="transition-opacity duration-300" :class="thankYouDialogClasses">
+      Thanks for reaching out! I'll be in touch soon.
+    </p>
   </dialog>
 </template>
 
@@ -19,6 +22,9 @@ const { open } = defineProps<{ open: boolean }>();
 const emit = defineEmits<{ onClose: [] }>();
 
 const dialogEl = ref<HTMLDialogElement | null>(null);
+const formSubmitted = ref(false);
+
+setTimeout(() => (formSubmitted.value = true), 2000);
 
 // Prevents overriding display: none on dialog when hidden
 const dialogClasses = computed(() => (open ? "flex" : undefined));
@@ -37,7 +43,7 @@ watch(
 );
 
 function handleClickCloseButton() {
-  dialogEl.value?.close();
+  emit("onClose");
 }
 </script>
 
@@ -52,8 +58,7 @@ dialog[open] {
 }
 
 dialog {
-  // 1Password menu can overflow dialog for some reason
-  overflow: hidden;
+  overflow: hidden; // 1Password menu can overflow dialog for some reason
   opacity: 0;
   transform: translateY(-50%);
   transition:
