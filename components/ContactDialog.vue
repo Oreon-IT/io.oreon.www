@@ -14,6 +14,7 @@
       v-if="isFormAvailable"
       @close="$emit('close')"
       :email-sent="emailSent"
+      :email-error="emailError"
       :submitted="emailSent"
       @submit="handleSubmit"
     />
@@ -27,6 +28,7 @@ defineEmits<{ close: [] }>();
 const isFormAvailable = ref(true);
 const dialogEl = ref<HTMLDialogElement | null>(null);
 const emailSent = ref(false);
+const emailError = ref(false);
 
 // Prevents overriding display: none on dialog when hidden
 const dialogClasses = computed(() => (open ? "flex" : undefined));
@@ -53,6 +55,7 @@ async function handleSubmit(contactDetails: ContactDetails) {
     await sendContactEmail(contactDetails);
     emailSent.value = true;
   } catch (error) {
+    emailError.value = true;
     console.error(error);
   }
 }

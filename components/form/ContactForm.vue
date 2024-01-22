@@ -34,9 +34,12 @@
     />
 
     <FadeTransition>
-      <p v-if="emailSent" class="rounded bg-yellow-300 p-2">
+      <SuccessMessage v-if="emailSent">
         Thanks for reaching out! I'll be in touch soon.
-      </p>
+      </SuccessMessage>
+      <ErrorMessage v-else-if="emailError">
+        Something went wrong, please try again later
+      </ErrorMessage>
       <div v-else class="flex justify-end gap-2">
         <RegularButton button-type="reset" type="danger">Cancel</RegularButton>
         <RegularButton button-type="submit" type="primary"
@@ -51,7 +54,7 @@
 import { useForm } from "vee-validate";
 import { toTypedSchema } from "@vee-validate/zod";
 
-defineProps<{ emailSent: boolean }>();
+defineProps<{ emailSent: boolean; emailError: boolean }>();
 
 const emit = defineEmits<{
   close: [void];
