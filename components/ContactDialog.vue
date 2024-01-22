@@ -1,9 +1,15 @@
 <template>
   <dialog
-    class="w-11/12 flex-col gap-2 border-2 border-black p-4 backdrop-opacity-5 sm:w-[600px]"
+    class="relative w-11/12 flex-col gap-2 border-2 border-black p-4 backdrop-opacity-5 sm:w-[600px]"
     ref="dialogEl"
-    :class="classes"
+    :class="dialogClasses"
   >
+    <button
+      class="material-symbols-outlined absolute right-1 top-1"
+      @click="handleClickCloseButton"
+    >
+      close
+    </button>
     <ContactForm @close="dialogEl?.close()" />
   </dialog>
 </template>
@@ -15,7 +21,10 @@ const emit = defineEmits<{ onClose: [] }>();
 const dialogEl = ref<HTMLDialogElement | null>(null);
 
 // Prevents overriding display: none on dialog when hidden
-const classes = computed(() => (open ? `flex` : undefined));
+const dialogClasses = computed(() => (open ? "flex" : undefined));
+const thankYouDialogClasses = computed(() =>
+  formSubmitted.value ? "opacity-100" : "opacity-0",
+);
 
 watch(
   toRef(() => open),
@@ -26,6 +35,10 @@ watch(
     dialogEl.value?.close();
   },
 );
+
+function handleClickCloseButton() {
+  dialogEl.value?.close();
+}
 </script>
 
 // Animating backdrop. This seems impossible with Tailwind // Inspired by

@@ -4,7 +4,5 @@
 - Use gradient background on "hello there?"
 - Check accessibility
 - Reset form when closing dialog
-- Style cancel button better
-- Allow closing dialog via X
 - Change favicon
 - Add logo
