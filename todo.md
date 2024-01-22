@@ -1,7 +1,4 @@
 - Add amount of years of XP
-- Add <title> to SVG icons
 - Use gradient background on "hello there?"
 - Check accessibility
-- Handle error response from contact email
-- Navigating to oreon.io results in 500, while navigating to www.oreon.io does work correctly
-- Remove submit buttons if submit worked
+- Check mobile
