@@ -3,6 +3,5 @@
 - Ensure scrollbar only shows whe necessary
 - Use gradient background on "hello there?"
 - Check accessibility
-- Reset form when closing dialog
 - Change favicon
 - Add logo

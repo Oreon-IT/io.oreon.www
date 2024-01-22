@@ -10,7 +10,7 @@
     >
       close
     </button>
-    <ContactForm @close="emit('onClose')" />
+    <ContactForm v-if="isFormAvailable" @close="emit('onClose')" />
     <p class="transition-opacity duration-300" :class="thankYouDialogClasses">
       Thanks for reaching out! I'll be in touch soon.
     </p>
@@ -19,6 +19,7 @@
 
 <script lang="ts" setup>
 const { open } = defineProps<{ open: boolean }>();
+const isFormAvailable = ref(true);
 const emit = defineEmits<{ onClose: [] }>();
 
 const dialogEl = ref<HTMLDialogElement | null>(null);
@@ -36,8 +37,15 @@ watch(
   toRef(() => open),
   () => {
     if (open) {
+      isFormAvailable.value = true;
       return dialogEl.value?.showModal();
     }
+    // Timeout ensures the form doesn't get destroyed before transition is over
+    setTimeout(() => {
+      if (!open) {
+        isFormAvailable.value = false;
+      }
+    }, 300);
     dialogEl.value?.close();
   },
 );
