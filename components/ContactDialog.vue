@@ -39,6 +39,8 @@ dialog[open] {
 }
 
 dialog {
+  // 1Password menu can overflow dialog for some reason
+  overflow: hidden;
   opacity: 0;
   transform: translateY(-50%);
   transition:
