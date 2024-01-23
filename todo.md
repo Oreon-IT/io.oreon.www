@@ -2,6 +2,5 @@
 - Check accessibility
 - Add loading animation?
 - Prevent client spamming
-- Set up pipeline to check types, format & lint
-- Ensure functions files also get linted
 - Check why pre-commit hook is not running on personal MB
+- Netlify should not deploy if Github action doesn't run
