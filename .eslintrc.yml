@@ -1,0 +1,12 @@
+root: true
+extends:
+  - plugin:@typescript-eslint/recommended
+  - plugin:vue/vue3-recommended
+  - prettier
+rules:
+  no-console: error
+  vue/multi-word-component-names:
+    - error
+    - ignores: ["index"]
+parserOptions:
+  parser: "@typescript-eslint/parser"

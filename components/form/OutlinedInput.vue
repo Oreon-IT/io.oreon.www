@@ -10,21 +10,21 @@
     </div>
     <textarea
       v-if="textArea"
-      v-model="value"
-      v-on="validationListeners"
       v-bind="attrs"
       :id="id"
+      v-model="value"
       class="border-2 border-black p-1 transition-colors"
       :class="inputClasses"
+      v-on="validationListeners"
     />
     <input
       v-else
-      v-model="value"
-      v-on="validationListeners"
       v-bind="attrs"
       :id="id"
+      v-model="value"
       class="border-2 border-black p-1 transition-colors"
       :class="inputClasses"
+      v-on="validationListeners"
     />
     <div class="text-xs text-slate-500">
       <slot name="hint" />

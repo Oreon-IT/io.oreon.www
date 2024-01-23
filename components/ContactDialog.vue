@@ -1,7 +1,7 @@
 <template>
   <dialog
-    class="w-11/12 flex-col gap-2 border-2 border-black p-4 backdrop-opacity-5 sm:w-[600px]"
     ref="dialogEl"
+    class="w-11/12 flex-col gap-2 border-2 border-black p-4 backdrop-opacity-5 sm:w-[600px]"
     :class="dialogClasses"
     @close="$emit('close')"
   >
@@ -13,10 +13,10 @@
     </button>
     <ContactForm
       v-if="isFormAvailable"
-      @close="$emit('close')"
       :email-sent="emailSent"
       :email-error="emailError"
       :submitted="emailSent"
+      @close="$emit('close')"
       @submit="handleSubmit"
     />
   </dialog>
@@ -24,7 +24,7 @@
 
 <script lang="ts" setup>
 const { open } = defineProps<{ open: boolean }>();
-const emit = defineEmits<{ close: [] }>();
+defineEmits<{ close: [] }>();
 
 const isFormAvailable = ref(true);
 const dialogEl = ref<HTMLDialogElement | null>(null);
@@ -58,7 +58,6 @@ async function handleSubmit(contactDetails: ContactDetails) {
     emailSent.value = true;
   } catch (error) {
     emailError.value = true;
-    console.error(error);
   }
 }
 </script>

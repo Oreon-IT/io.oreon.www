@@ -23,8 +23,8 @@
 
     <ActionButton
       class="self-center text-xl"
-      @click="$emit('clickContactButton')"
       type="button"
+      @click="$emit('clickContactButton')"
     >
       Contact me
     </ActionButton>

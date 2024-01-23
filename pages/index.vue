@@ -3,7 +3,6 @@
     <TheHeader />
     <div class="grid grow place-content-center">
       <TheWelcome @click-contact-button="handleClickContactButton" />
-
       <ContactDialog :open="isContactDialogOpen" @close="handleClose" />
     </div>
   </div>
