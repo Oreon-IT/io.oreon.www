@@ -6,7 +6,7 @@
     "build": "nuxt build",
     "nuxt:dev": "nuxt dev",
     "dev": "netlify dev",
-    "lint": "eslint --ext .ts,.vue --max-warnings 0 .",
+    "lint": "eslint --ext .mts,.ts,.vue --max-warnings 0 .",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",

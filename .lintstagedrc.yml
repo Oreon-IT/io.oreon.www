@@ -1,1 +1,2 @@
-{ "*": "prettier --ignore-unknown --write" }
+"*": "prettier --ignore-unknown --write"
+"*.{vue,ts,mts}": eslint --fix --max-warnings 0
