@@ -1,0 +1,24 @@
+name: Check format, code style and types
+on: push
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      # Needs to be enabled in separate step for now, see https://github.com/actions/setup-node/issues/480
+      - name: Enable Corepack for yarn
+        run: corepack enable
+      - name: Use Node 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: "yarn"
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+      - name: Check format
+        run: yarn check:format
+      - name: Check code style
+        run: yarn check:code-style
+      - name: Check types
+        run: yarn check:types
