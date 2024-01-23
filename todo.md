@@ -1,5 +1,5 @@
 - Add amount of years of XP
 - Check accessibility
 - Add loading animation?
-- Don't allow function to be called from other origins
 - Prevent client spamming
+- Set up pipeline to check types, format & lint

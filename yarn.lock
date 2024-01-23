@@ -5171,6 +5171,7 @@ __metadata:
     prettier-plugin-tailwindcss: "npm:^0.5.11"
     sass: "npm:^1.70.0"
     tailwindcss: "npm:^3.4.0"
+    typescript: "npm:^5.3.3"
     vee-validate: "npm:^4.12.4"
     vite-svg-loader: "npm:^5.1.0"
     vue: "npm:^3.4.3"
@@ -7111,6 +7112,26 @@ __metadata:
   version: 4.9.0
   resolution: "type-fest@npm:4.9.0"
   checksum: 7e6423f7337928a7323ce8a68cfbbaf30ecb70b9c635207899e58297d219c71be4a8c50b52afb9fe09c9f44b2c4276d0a44bb95acabab7bc942455f980aad267
+  languageName: node
+  linkType: hard
+
+"typescript@npm:^5.3.3":
+  version: 5.3.3
+  resolution: "typescript@npm:5.3.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: e33cef99d82573624fc0f854a2980322714986bc35b9cb4d1ce736ed182aeab78e2cb32b385efa493b2a976ef52c53e20d6c6918312353a91850e2b76f1ea44f
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A^5.3.3#optional!builtin<compat/typescript>":
+  version: 5.3.3
+  resolution: "typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 1d0a5f4ce496c42caa9a30e659c467c5686eae15d54b027ee7866744952547f1be1262f2d40de911618c242b510029d51d43ff605dba8fb740ec85ca2d3f9500
   languageName: node
   linkType: hard
 

@@ -1,10 +1,8 @@
-# Nuxt 3 Minimal Starter
-
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Personal Website Oreon
 
 ## Setup
 
-Make sure to install the dependencies:
+- Make sure to install the dependencies:
 
 ```bash
 # npm
@@ -19,6 +17,9 @@ yarn install
 # bun
 bun install
 ```
+
+- Follow instructions to download [Netlify CLI](https://docs.netlify.com/cli/get-started/)
+- Link to Netlify site with `netlify link`
 
 ## Development Server
 

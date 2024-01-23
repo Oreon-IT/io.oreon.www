@@ -1,5 +1,3 @@
-import type { Context } from "@netlify/functions";
-
 function sendEmail(message: string, email: string, name?: string) {
   return fetch(`https://api.brevo.com/v3/smtp/email`, {
     method: "POST",
@@ -36,6 +34,20 @@ function getErrorMessage(error: unknown) {
 }
 
 export default async function handler(request: Request) {
+  const origin = request.headers.get("origin");
+  if (
+    !origin.startsWith("http://localhozt") &&
+    !origin.startsWith("http://127.0.0.1") &&
+    !origin.startsWith("https://oreon.io")
+  ) {
+    return new Response(
+      "Requests to this function are only allowed from specific origins",
+      {
+        status: 400,
+      },
+    );
+  }
+
   try {
     const body = await request.json();
     if (typeof body !== "object" || body == null) {
