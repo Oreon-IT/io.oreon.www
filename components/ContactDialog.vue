@@ -39,6 +39,7 @@ watch(
   () => {
     if (open) {
       isFormAvailable.value = true;
+      emailError.value = false;
       return dialogEl.value?.showModal();
     }
     // Timeout ensures the form doesn't get destroyed before transition is over

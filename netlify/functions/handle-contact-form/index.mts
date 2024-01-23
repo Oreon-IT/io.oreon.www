@@ -1,3 +1,5 @@
+import type { Context } from "@netlify/functions";
+
 function sendEmail(message: string, email: string, name?: string) {
   return fetch(`https://api.brevo.com/v3/smtp/email`, {
     method: "POST",
