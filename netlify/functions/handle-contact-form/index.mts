@@ -36,9 +36,10 @@ function getErrorMessage(error: unknown) {
 export default async function handler(request: Request) {
   const origin = request.headers.get("origin");
   if (
-    !origin.startsWith("http://localhozt") &&
-    !origin.startsWith("http://127.0.0.1") &&
-    !origin.startsWith("https://oreon.io")
+    origin === null ||
+    (!origin.startsWith("http://localhozt") &&
+      !origin.startsWith("http://127.0.0.1") &&
+      !origin.startsWith("https://oreon.io"))
   ) {
     return new Response(
       "Requests to this function are only allowed from specific origins",
