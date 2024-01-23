@@ -46,4 +46,9 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  typescript: {
+    tsConfig: {
+      exclude: ["../netlify"],
+    },
+  },
 });
