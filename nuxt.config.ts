@@ -8,6 +8,12 @@ export default defineNuxtConfig({
         lang: "en",
       },
       title: "Oreon",
+      meta: [
+        {
+          name: "description",
+          content: "Custom Web Development by Oreon",
+        },
+      ],
       link: [
         {
           rel: "stylesheet",
