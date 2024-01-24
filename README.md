@@ -1,8 +1,10 @@
-# Personal Website Oreon
+# Website Oreon
+
+![Check formatting, code style and types](https://github.com/Oreon-IT/io.oreon.www/actions/workflows/check.yml/badge.svg?branch=main)
 
 ## Setup
 
-- Make sure to install the dependencies:
+- Install dependencies:
 
 ```bash
 # npm
