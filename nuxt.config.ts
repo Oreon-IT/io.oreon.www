@@ -4,6 +4,19 @@ import svgLoader from "vite-svg-loader";
 export default defineNuxtConfig({
   app: {
     head: {
+      script: [
+        {
+          async: true,
+          src: "https://www.googletagmanager.com/gtag/js?id=G-8VFRF7YQPW",
+        },
+        {
+          innerHTML: `window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-8VFRF7YQPW');
+        `,
+        },
+      ],
       htmlAttrs: {
         lang: "en",
       },
