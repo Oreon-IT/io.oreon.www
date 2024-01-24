@@ -3,6 +3,29 @@
   overflow-y: auto;
 }
 
+/* Material Symbols https://developers.google.com/fonts/docs/material_symbols/#use_in_web */
+@font-face {
+  font-family: "Material Symbols Outlined";
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/material-symbols-outlined.woff2");
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+
+/* Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
