@@ -4,6 +4,7 @@ import svgLoader from "vite-svg-loader";
 export default defineNuxtConfig({
   app: {
     head: {
+      title: "Oreon",
       link: [
         {
           rel: "stylesheet",
