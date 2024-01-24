@@ -1,7 +1,5 @@
-- Add amount of years of XP
 - Check accessibility
 - Add loading animation?
 - Prevent client spamming
 - Check why pre-commit hook is not running on personal MB
 - Netlify should not deploy if Github action doesn't run
-- Is it possible to reduce size of material-symbols-outlined.woff2 file by only including relevant axes? (opsz,wght,FILL,GRAD@48,400,1,0)

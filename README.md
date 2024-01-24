@@ -1,6 +1,6 @@
 # Website Oreon
 
-![Check formatting, code style and types](https://github.com/Oreon-IT/io.oreon.www/actions/workflows/check.yml/badge.svg?branch=main)
+![Check formatting, code style, types & deploy to Netlify](https://github.com/Oreon-IT/io.oreon.www/actions/workflows/main.yml/badge.svg?branch=main)
 
 ## Setup
 
