@@ -1,5 +1,5 @@
 function sendEmail(message: string, email: string, name?: string) {
-  return fetch(`https://api.brevo.com/v3/smtp/email`, {
+  return fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
     headers: {
       accept: "application/json",
@@ -37,7 +37,7 @@ export default async function handler(request: Request) {
   const origin = request.headers.get("origin");
   if (
     origin === null ||
-    (!origin.startsWith("http://localhozt") &&
+    (!origin.startsWith("http://localhost") &&
       !origin.startsWith("http://127.0.0.1") &&
       !origin.startsWith("https://oreon.io"))
   ) {

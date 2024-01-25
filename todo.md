@@ -2,4 +2,3 @@
 - Add loading animation?
 - Prevent client spamming
 - Check why pre-commit hook is not running on personal MB
-- Netlify should not deploy if Github action doesn't run
