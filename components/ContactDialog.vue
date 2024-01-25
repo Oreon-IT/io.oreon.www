@@ -16,6 +16,7 @@
       :email-sent="emailSent"
       :email-error="emailError"
       :submitted="emailSent"
+      :loading="emailLoading"
       @close="$emit('close')"
       @submit="handleSubmit"
     />
@@ -30,6 +31,7 @@ const isFormAvailable = ref(true);
 const dialogEl = ref<HTMLDialogElement | null>(null);
 const emailSent = ref(false);
 const emailError = ref(false);
+const emailLoading = ref(false);
 
 // Prevents overriding display: none on dialog when hidden
 const dialogClasses = computed(() => (open ? "flex" : undefined));
@@ -54,10 +56,13 @@ watch(
 
 async function handleSubmit(contactDetails: ContactDetails) {
   try {
+    emailLoading.value = true;
     await sendContactEmail(contactDetails);
     emailSent.value = true;
   } catch (error) {
     emailError.value = true;
+  } finally {
+    emailLoading.value = false;
   }
 }
 </script>

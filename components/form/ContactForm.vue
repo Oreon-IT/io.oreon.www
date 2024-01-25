@@ -42,7 +42,7 @@
       </ErrorMessage>
       <div v-else class="flex justify-end gap-2">
         <RegularButton button-type="reset" type="danger">Cancel</RegularButton>
-        <RegularButton button-type="submit" type="primary"
+        <RegularButton :loading="loading" button-type="submit" type="primary"
           >Submit</RegularButton
         >
       </div>
@@ -54,7 +54,7 @@
 import { useForm } from "vee-validate";
 import { toTypedSchema } from "@vee-validate/zod";
 
-defineProps<{ emailSent: boolean; emailError: boolean }>();
+defineProps<{ emailSent: boolean; emailError: boolean; loading: boolean }>();
 
 const emit = defineEmits<{
   close: [void];
