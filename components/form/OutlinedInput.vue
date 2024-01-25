@@ -13,7 +13,6 @@
       v-bind="attrs"
       :id="id"
       v-model="value"
-      class="border-2 border-black p-1 transition-colors"
       :class="inputClasses"
       v-on="validationListeners"
     />
@@ -22,7 +21,6 @@
       v-bind="attrs"
       :id="id"
       v-model="value"
-      class="border-2 border-black p-1 transition-colors"
       :class="inputClasses"
       v-on="validationListeners"
     />
@@ -75,9 +73,10 @@ const containerClasses = computed(
     }`,
 );
 
-const inputClasses = computed(() =>
-  meta.touched && hasErrorMessage.value
-    ? "border-red-500"
-    : "focus-visible:border-yellow-300",
-);
+const inputClasses = computed(() => {
+  const commonClasses = "border-2 border-black p-1 transition-colors";
+  return meta.touched && hasErrorMessage.value
+    ? `${commonClasses} border-red-500`
+    : `${commonClasses} focus-visible:border-yellow-300`;
+});
 </script>
