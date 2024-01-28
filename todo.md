@@ -1,2 +1,1 @@
 - Prevent client spamming
-- Check why pre-commit hook is not running on personal MB
