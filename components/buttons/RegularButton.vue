@@ -1,6 +1,5 @@
 <template>
   <button
-    ref="buttonEl"
     :type="buttonType"
     class="transition-color rounded border-4 px-2 py-1 duration-200 enabled:hover:text-white enabled:focus-visible:text-white disabled:cursor-progress"
     :class="classes"
